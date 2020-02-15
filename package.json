@@ -1,0 +1,15 @@
+{
+  "name": "impacteffort",
+  "version": "0.0.0",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "chart.js": "^2.9.3",
+    "chartjs-node": "^1.7.1",
+    "dotenv": "^8.2.0",
+    "express": "^4.17.1",
+    "s3": "^4.4.0"
+  }
+}
