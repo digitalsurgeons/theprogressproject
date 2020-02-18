@@ -4,16 +4,22 @@ const express = require('express')
 const ChartjsNode = require('chartjs-node')
 const s3 = require('s3')
 const path = require('path')
+const mailgun = require('mailgun.js')
 
 const app = express()
 app.use(express.json())
 
-const bucket = 'https://impacteffort.s3.amazonaws.com/charts/'
+const s3Bucket = process.env.S3_BUCKET_URL
 const s3Client = s3.createClient(***REMOVED***
   s3Options: ***REMOVED***
     accessKeyId: process.env.S3_ACCESS_KEY_ID,
     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY
   ***REMOVED***
+***REMOVED***)
+
+const mg = mailgun.client(***REMOVED***
+  username: 'api',
+  key: process.env.MAILGUN_API_KEY
 ***REMOVED***)
 
 const chartNode = new ChartjsNode(600, 600)
@@ -195,6 +201,35 @@ function drawChart(answers) ***REMOVED***
 
         uploader.on('end', function() ***REMOVED***
           console.log('Image saved ✅')
+          console.log('Sending email...')
+
+          mg.messages
+            .create('impacteffort.digitalsurgeons.com', ***REMOVED***
+              from:
+                'Impact vs Effort <noreply@impacteffort.digitalsurgeons.com>',
+              to: ['ac@digitalsurgeons.com'],
+              subject: 'Impact vs Effort - Start making an impact today',
+              html: `
+                <h1>Impact vs Effort</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Aenean ultrices sollicitudin lectus a consectetur. 
+                Aenean tempus fringilla urna non mattis. 
+                Nullam sed accumsan turpis. Donec nec magna aliquet, 
+                viverra mi vitae, semper libero. Duis vitae lectus quam. 
+                Suspendisse ac elementum orci.</p>
+                <h2>Your Impact vs Effort Chart</h2>
+                <img src="$***REMOVED***s3Bucket***REMOVED***/charts/$***REMOVED***asset***REMOVED***" />
+                <ul>
+                  <li>$***REMOVED***answers[0].text***REMOVED***</li>
+                  <li>$***REMOVED***answers[3].text***REMOVED***</li>
+                  <li>$***REMOVED***answers[6].text***REMOVED***</li>
+                  <li>$***REMOVED***answers[9].text***REMOVED***</li>
+                  <li>$***REMOVED***answers[12].text***REMOVED***</li>
+                </ul>
+              `
+            ***REMOVED***)
+            .then(msg => console.log(msg))
+            .catch(err => console.log(err))
         ***REMOVED***)
       ***REMOVED***)
     ***REMOVED***, 1000)
