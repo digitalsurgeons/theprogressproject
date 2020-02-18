@@ -4,16 +4,22 @@ const express = require('express')
 const ChartjsNode = require('chartjs-node')
 const s3 = require('s3')
 const path = require('path')
+const mailgun = require('mailgun.js')
 
 const app = express()
 app.use(express.json())
 
-const bucket = 'https://impacteffort.s3.amazonaws.com/charts/'
+const s3Bucket = process.env.S3_BUCKET_URL
 const s3Client = s3.createClient({
   s3Options: {
     accessKeyId: process.env.S3_ACCESS_KEY_ID,
     secretAccessKey: process.env.S3_SECRET_ACCESS_KEY
   }
+})
+
+const mg = mailgun.client({
+  username: 'api',
+  key: process.env.MAILGUN_API_KEY
 })
 
 const chartNode = new ChartjsNode(600, 600)
@@ -195,6 +201,35 @@ function drawChart(answers) {
 
         uploader.on('end', function() {
           console.log('Image saved ✅')
+          console.log('Sending email...')
+
+          mg.messages
+            .create('impacteffort.digitalsurgeons.com', {
+              from:
+                'Impact vs Effort <noreply@impacteffort.digitalsurgeons.com>',
+              to: ['ac@digitalsurgeons.com'],
+              subject: 'Impact vs Effort - Start making an impact today',
+              html: `
+                <h1>Impact vs Effort</h1>
+                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+                Aenean ultrices sollicitudin lectus a consectetur. 
+                Aenean tempus fringilla urna non mattis. 
+                Nullam sed accumsan turpis. Donec nec magna aliquet, 
+                viverra mi vitae, semper libero. Duis vitae lectus quam. 
+                Suspendisse ac elementum orci.</p>
+                <h2>Your Impact vs Effort Chart</h2>
+                <img src="${s3Bucket}/charts/${asset}" />
+                <ul>
+                  <li>${answers[0].text}</li>
+                  <li>${answers[3].text}</li>
+                  <li>${answers[6].text}</li>
+                  <li>${answers[9].text}</li>
+                  <li>${answers[12].text}</li>
+                </ul>
+              `
+            })
+            .then(msg => console.log(msg))
+            .catch(err => console.log(err))
         })
       })
     }, 1000)
