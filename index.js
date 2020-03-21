@@ -19,6 +19,12 @@ app.post('/', (request, response) => {
   })
 })
 
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {
+    root: './templates'
+  })
+})
+
 app.listen(3000, () => {
   console.log(`Example app listening on port 3000!`)
 })
