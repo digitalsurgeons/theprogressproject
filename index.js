@@ -13,7 +13,7 @@ app.post('/', (request, response) => ***REMOVED***
 
   chart(answers, params => ***REMOVED***
     mail(params, ***REMOVED***
-      to: 'ac@digitalsurgeons.com',
+      to: process.env.EMAIL,
       template
     ***REMOVED***)
   ***REMOVED***)
