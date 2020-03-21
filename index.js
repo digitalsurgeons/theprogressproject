@@ -13,7 +13,7 @@ app.post('/', (request, response) => {
 
   chart(answers, params => {
     mail(params, {
-      to: 'ac@digitalsurgeons.com',
+      to: process.env.EMAIL,
       template
     })
   })
