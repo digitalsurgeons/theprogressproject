@@ -19,6 +19,12 @@ app.post('/', (request, response) => ***REMOVED***
   ***REMOVED***)
 ***REMOVED***)
 
+app.get('/', (req, res) => ***REMOVED***
+  res.sendFile('index.html', ***REMOVED***
+    root: './templates'
+  ***REMOVED***)
+***REMOVED***)
+
 app.listen(3000, () => ***REMOVED***
   console.log(`Example app listening on port 3000!`)
 ***REMOVED***)
