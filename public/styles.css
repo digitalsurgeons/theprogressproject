@@ -33,11 +33,11 @@ h6 ***REMOVED***
 ***REMOVED***
 
 body ***REMOVED***
+  text-align: center;
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  text-align: center;
   height: 100vh;
   width: 100vw;
 ***REMOVED***
@@ -46,52 +46,88 @@ body ***REMOVED***
   width: 100vw;
   max-width: 920px;
   margin: 0 auto;
-  height: 100%;
   display: flex;
   flex-direction: column;
+  height: 100%;
   padding: 0 20px;
   align-items: center;
   justify-content: center;
 ***REMOVED***
 
 .heading ***REMOVED***
-  font-size: 120px;
-  line-height: 0.9;
+  font-size: 56px;
+  line-height: 1;
   margin: 0 0 20px 0;
 ***REMOVED***
 
 .body ***REMOVED***
-  font-size: 20px;
+  font-size: 17px;
   line-height: 2;
-  margin: 30px 0;
+  margin: 20px 0;
 ***REMOVED***
 
 .button ***REMOVED***
   background: #ff2e2b;
   color: #fff;
-  font-size: 18px;
+  font-size: 16px;
   font-weight: bold;
-  padding: 20px 30px;
+  padding: 20px 60px;
   transition: 0.3s;
   text-transform: uppercase;
   text-decoration: none;
-  margin: 20px 0;
+  margin: 10px 0;
 ***REMOVED***
 
 .button:hover ***REMOVED***
-  transform: scale(1.2);
+  transform: scale(1.05);
 ***REMOVED***
 
 .footer ***REMOVED***
-  display: flex;
-  align-items: center;
   width: 100%;
-  justify-content: center;
   margin-top: auto;
-  padding-bottom: 20px;
+***REMOVED***
+
+.footer__body ***REMOVED***
+  margin: 10px 0 0;
 ***REMOVED***
 
 .footer__img ***REMOVED***
   height: 70px;
   margin-left: 10px;
+  transform: translateY(-10px);
+***REMOVED***
+
+@media (min-width: 768px) ***REMOVED***
+  .canvas ***REMOVED***
+    height: 100%;
+    padding: 0 20px;
+  ***REMOVED***
+
+  .heading ***REMOVED***
+    font-size: 120px;
+    line-height: 0.9;
+    margin: 0 0 10px 0;
+  ***REMOVED***
+
+  .body ***REMOVED***
+    font-size: 20px;
+    line-height: 2;
+    margin: 30px 0;
+  ***REMOVED***
+
+  .button ***REMOVED***
+    font-size: 18px;
+    margin: 10px 0;
+  ***REMOVED***
+
+  .footer ***REMOVED***
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+  ***REMOVED***
+
+  .footer__img ***REMOVED***
+    transform: none;
+  ***REMOVED***
 ***REMOVED***
