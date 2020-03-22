@@ -19,6 +19,8 @@ app.post('/progress', (request, response) => {
       template
     })
   })
+
+  return
 })
 
 app.get('/', (req, res) => {
