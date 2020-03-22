@@ -10,7 +10,7 @@ app.use(express.json())
 
 app.use(express.static('public'))
 
-app.post('/', (request, response) => {
+app.post('/progress', (request, response) => {
   const answers = request.body.form_response.answers
 
   chart(answers, params => {
