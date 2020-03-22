@@ -1,0 +1,97 @@
+@font-face ***REMOVED***
+  font-family: 'gilroyextrabold';
+  src: url('fonts/gilroy-extrabold_3-webfont.woff2') format('woff2'),
+    url('fonts/gilroy-extrabold_3-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+***REMOVED***
+
+@font-face ***REMOVED***
+  font-family: 'gilroymedium';
+  src: url('fonts/radomir_tinkov_-_gilroy-medium-webfont.woff2') format('woff2'),
+    url('fonts/radomir_tinkov_-_gilroy-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+***REMOVED***
+
+html * ***REMOVED***
+  box-sizing: border-box;
+***REMOVED***
+
+body ***REMOVED***
+  margin: 0;
+  font-family: 'gilroymedium';
+***REMOVED***
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 ***REMOVED***
+  font-family: 'gilroyextrabold';
+***REMOVED***
+
+body ***REMOVED***
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  height: 100vh;
+  width: 100vw;
+***REMOVED***
+
+.canvas ***REMOVED***
+  width: 100vw;
+  max-width: 920px;
+  margin: 0 auto;
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 0 20px;
+  align-items: center;
+  justify-content: center;
+***REMOVED***
+
+.heading ***REMOVED***
+  font-size: 120px;
+  line-height: 0.9;
+  margin: 0 0 20px 0;
+***REMOVED***
+
+.body ***REMOVED***
+  font-size: 20px;
+  line-height: 2;
+  margin: 30px 0;
+***REMOVED***
+
+.button ***REMOVED***
+  background: #ff2e2b;
+  color: #fff;
+  font-size: 18px;
+  font-weight: bold;
+  padding: 20px 30px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 20px 0;
+***REMOVED***
+
+.button:hover ***REMOVED***
+  transform: scale(1.2);
+***REMOVED***
+
+.footer ***REMOVED***
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  margin-top: auto;
+  padding-bottom: 20px;
+***REMOVED***
+
+.footer__img ***REMOVED***
+  height: 70px;
+  margin-left: 10px;
+***REMOVED***
