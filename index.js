@@ -19,6 +19,8 @@ app.post('/progress', (request, response) => ***REMOVED***
       template
     ***REMOVED***)
   ***REMOVED***)
+
+  return
 ***REMOVED***)
 
 app.get('/', (req, res) => ***REMOVED***
