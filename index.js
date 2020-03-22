@@ -8,6 +8,8 @@ const template = require('./lib/template')
 const app = express()
 app.use(express.json())
 
+app.use(express.static('public'))
+
 app.post('/', (request, response) => ***REMOVED***
   const answers = request.body.form_response.answers
 
