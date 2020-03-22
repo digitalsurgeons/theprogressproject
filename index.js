@@ -10,8 +10,8 @@ app.use(express.json())
 
 app.use(express.static('public'))
 
-app.post('/progress', (request, response) => {
-  const answers = request.body.form_response.answers
+app.post('/progress', (req, res) => {
+  const answers = req.body.form_response.answers
 
   chart(answers, params => {
     mail(params, {
@@ -20,7 +20,7 @@ app.post('/progress', (request, response) => {
     })
   })
 
-  return
+  res.send('ok')
 })
 
 app.get('/', (req, res) => {
