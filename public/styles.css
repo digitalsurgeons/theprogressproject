@@ -42,6 +42,13 @@ body {
   width: 100vw;
 }
 
+.header {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
 .canvas {
   width: 100vw;
   max-width: 920px;
@@ -55,31 +62,34 @@ body {
 }
 
 .heading {
-  font-size: 56px;
-  line-height: 1;
-  margin: 0 0 20px 0;
+  font-size: 37px;
+  line-height: 1.1;
+  margin: 0 0 10px 0;
+  max-width: 770px;
 }
 
 .body {
   font-size: 17px;
-  line-height: 2;
-  margin: 20px 0;
+  line-height: 1.7;
+  margin: 10px 0 20px;
 }
 
 .button {
   background: #eb4926;
+  border: solid 2px #eb4926;
   color: #fff;
   font-size: 16px;
   font-weight: bold;
-  padding: 20px 60px;
+  padding: 15px 60px;
   transition: 0.3s;
   text-transform: uppercase;
   text-decoration: none;
-  margin: 10px 0;
+  margin: 10px 0 20px;
 }
 
 .button:hover {
-  transform: scale(1.05);
+  background: none;
+  color: #eb4926;
 }
 
 .footer {
@@ -98,14 +108,21 @@ body {
 }
 
 @media (min-width: 768px) {
+  .header {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
   .canvas {
     height: 100%;
     padding: 0 20px;
   }
 
   .heading {
-    font-size: 120px;
-    line-height: 0.9;
+    font-size: 70px;
+    line-height: 80px;
     margin: 0 0 10px 0;
   }
 
@@ -116,7 +133,6 @@ body {
   }
 
   .button {
-    font-size: 18px;
     margin: 10px 0;
   }
 
