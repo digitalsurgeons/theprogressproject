@@ -144,6 +144,10 @@ body {
     padding-bottom: 20px;
   }
 
+  .footer__body {
+    margin: 0;
+  }
+
   .footer__img {
     transform: none;
   }
