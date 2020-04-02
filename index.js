@@ -15,7 +15,7 @@ app.post('/progress', (req, res) => ***REMOVED***
 
   chart(answers, params => ***REMOVED***
     mail(params, ***REMOVED***
-      to: process.env.EMAIL,
+      bcc: process.env.EMAIL,
       template
     ***REMOVED***)
   ***REMOVED***)
