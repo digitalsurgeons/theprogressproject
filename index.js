@@ -15,7 +15,7 @@ app.post('/progress', (req, res) => {
 
   chart(answers, params => {
     mail(params, {
-      to: process.env.EMAIL,
+      bcc: process.env.EMAIL,
       template
     })
   })
