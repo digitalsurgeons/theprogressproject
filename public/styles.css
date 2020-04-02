@@ -35,11 +35,6 @@ h6 {
 
 body {
   text-align: center;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  height: 100vh;
   width: 100vw;
 }
 
@@ -54,31 +49,27 @@ body {
   width: 100vw;
   max-width: 920px;
   margin: 0 auto;
-  display: flex;
-  flex-direction: column;
-  height: 100%;
   padding: 0 20px;
-  align-items: center;
-  justify-content: center;
 }
 
 .heading {
   font-size: 37px;
   line-height: 1.1;
-  margin: 0 0 10px 0;
+  margin: 20px 0 10px 0;
   max-width: 770px;
 }
 
 .body {
   font-size: 17px;
   line-height: 1.7;
-  margin: 10px 0 20px;
+  margin: 30px 0 20px;
 }
 
 .button {
   background: #eb4926;
   border: solid 2px #eb4926;
   color: #fff;
+  display: inline-block;
   font-size: 16px;
   font-weight: bold;
   padding: 15px 60px;
@@ -95,7 +86,7 @@ body {
 
 .footer {
   width: 100%;
-  margin-top: auto;
+  margin-top: 20px;
 }
 
 .footer__body {
@@ -106,6 +97,36 @@ body {
   height: 70px;
   margin-left: 10px;
   transform: translateY(-10px);
+}
+
+@media (min-height: 680px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .canvas {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heading {
+    margin: 0 0 10px 0;
+  }
+
+  .body {
+    margin: 10px 0 20px;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
 }
 
 @media (min-width: 768px) {
