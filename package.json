@@ -1,6 +1,6 @@
 ***REMOVED***
-  "name": "impacteffort",
-  "version": "0.0.0",
+  "name": "theprogressproject",
+  "version": "1.0.0",
   "main": "index.js",
   "scripts": ***REMOVED***
     "start": "node index.js",
