@@ -1,3 +1,6 @@
 node_modules
 img
 .env
+.DS_Store
+public/email.html
+notes.md

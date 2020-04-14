@@ -1,0 +1,175 @@
+@font-face {
+  font-family: 'gilroyextrabold';
+  src: url('fonts/gilroy-extrabold_3-webfont.woff2') format('woff2'),
+    url('fonts/gilroy-extrabold_3-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'gilroymedium';
+  src: url('fonts/radomir_tinkov_-_gilroy-medium-webfont.woff2') format('woff2'),
+    url('fonts/radomir_tinkov_-_gilroy-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+html * {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f7f7f7;
+  margin: 0;
+  font-family: 'gilroymedium';
+}
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: 'gilroyextrabold';
+}
+
+body {
+  text-align: center;
+  width: 100vw;
+}
+
+.header {
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+}
+
+.canvas {
+  width: 100vw;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+
+.heading {
+  font-size: 37px;
+  line-height: 1.1;
+  margin: 20px 0 10px 0;
+  max-width: 770px;
+}
+
+.body {
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 30px 0 20px;
+}
+
+.button {
+  background: #eb4926;
+  border: solid 2px #eb4926;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 60px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 10px 0 20px;
+}
+
+.button:hover {
+  background: none;
+  color: #eb4926;
+}
+
+.footer {
+  width: 100%;
+  margin-top: 20px;
+}
+
+.footer__body {
+  margin: 10px 0 0;
+}
+
+.footer__img {
+  height: 70px;
+  margin-left: 10px;
+  transform: translateY(-10px);
+}
+
+@media (min-height: 680px) {
+  body {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }
+
+  .canvas {
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  }
+
+  .heading {
+    margin: 0 0 10px 0;
+  }
+
+  .body {
+    margin: 10px 0 20px;
+  }
+
+  .footer {
+    margin-top: auto;
+  }
+}
+
+@media (min-width: 768px) {
+  .header {
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: flex-start;
+  }
+
+  .canvas {
+    height: 100%;
+    padding: 0 20px;
+  }
+
+  .heading {
+    font-size: 70px;
+    line-height: 80px;
+    margin: 0 0 10px 0;
+  }
+
+  .body {
+    font-size: 20px;
+    line-height: 2;
+    margin: 30px 0;
+  }
+
+  .button {
+    margin: 10px 0;
+  }
+
+  .footer {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+  }
+
+  .footer__body {
+    margin: 0;
+  }
+
+  .footer__img {
+    transform: none;
+  }
+}
