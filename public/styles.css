@@ -1,0 +1,175 @@
+@font-face ***REMOVED***
+  font-family: 'gilroyextrabold';
+  src: url('fonts/gilroy-extrabold_3-webfont.woff2') format('woff2'),
+    url('fonts/gilroy-extrabold_3-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+***REMOVED***
+
+@font-face ***REMOVED***
+  font-family: 'gilroymedium';
+  src: url('fonts/radomir_tinkov_-_gilroy-medium-webfont.woff2') format('woff2'),
+    url('fonts/radomir_tinkov_-_gilroy-medium-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+***REMOVED***
+
+html * ***REMOVED***
+  box-sizing: border-box;
+***REMOVED***
+
+body ***REMOVED***
+  background: #f7f7f7;
+  margin: 0;
+  font-family: 'gilroymedium';
+***REMOVED***
+
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 ***REMOVED***
+  font-family: 'gilroyextrabold';
+***REMOVED***
+
+body ***REMOVED***
+  text-align: center;
+  width: 100vw;
+***REMOVED***
+
+.header ***REMOVED***
+  display: flex;
+  padding: 20px;
+  width: 100%;
+  justify-content: center;
+***REMOVED***
+
+.canvas ***REMOVED***
+  width: 100vw;
+  max-width: 920px;
+  margin: 0 auto;
+  padding: 0 20px;
+***REMOVED***
+
+.heading ***REMOVED***
+  font-size: 37px;
+  line-height: 1.1;
+  margin: 20px 0 10px 0;
+  max-width: 770px;
+***REMOVED***
+
+.body ***REMOVED***
+  font-size: 17px;
+  line-height: 1.7;
+  margin: 30px 0 20px;
+***REMOVED***
+
+.button ***REMOVED***
+  background: #eb4926;
+  border: solid 2px #eb4926;
+  color: #fff;
+  display: inline-block;
+  font-size: 16px;
+  font-weight: bold;
+  padding: 15px 60px;
+  transition: 0.3s;
+  text-transform: uppercase;
+  text-decoration: none;
+  margin: 10px 0 20px;
+***REMOVED***
+
+.button:hover ***REMOVED***
+  background: none;
+  color: #eb4926;
+***REMOVED***
+
+.footer ***REMOVED***
+  width: 100%;
+  margin-top: 20px;
+***REMOVED***
+
+.footer__body ***REMOVED***
+  margin: 10px 0 0;
+***REMOVED***
+
+.footer__img ***REMOVED***
+  height: 70px;
+  margin-left: 10px;
+  transform: translateY(-10px);
+***REMOVED***
+
+@media (min-height: 680px) ***REMOVED***
+  body ***REMOVED***
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  ***REMOVED***
+
+  .canvas ***REMOVED***
+    display: flex;
+    flex-direction: column;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+  ***REMOVED***
+
+  .heading ***REMOVED***
+    margin: 0 0 10px 0;
+  ***REMOVED***
+
+  .body ***REMOVED***
+    margin: 10px 0 20px;
+  ***REMOVED***
+
+  .footer ***REMOVED***
+    margin-top: auto;
+  ***REMOVED***
+***REMOVED***
+
+@media (min-width: 768px) ***REMOVED***
+  .header ***REMOVED***
+    display: flex;
+    padding: 20px;
+    width: 100%;
+    justify-content: flex-start;
+  ***REMOVED***
+
+  .canvas ***REMOVED***
+    height: 100%;
+    padding: 0 20px;
+  ***REMOVED***
+
+  .heading ***REMOVED***
+    font-size: 70px;
+    line-height: 80px;
+    margin: 0 0 10px 0;
+  ***REMOVED***
+
+  .body ***REMOVED***
+    font-size: 20px;
+    line-height: 2;
+    margin: 30px 0;
+  ***REMOVED***
+
+  .button ***REMOVED***
+    margin: 10px 0;
+  ***REMOVED***
+
+  .footer ***REMOVED***
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    padding-bottom: 20px;
+  ***REMOVED***
+
+  .footer__body ***REMOVED***
+    margin: 0;
+  ***REMOVED***
+
+  .footer__img ***REMOVED***
+    transform: none;
+  ***REMOVED***
+***REMOVED***
