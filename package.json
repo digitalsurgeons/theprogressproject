@@ -1,12 +1,12 @@
-***REMOVED***
+{
   "name": "theprogressproject",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "main": "index.js",
-  "scripts": ***REMOVED***
+  "scripts": {
     "start": "node index.js",
     "deploy": "rsync -rxzv lib public templates index.js nodeapps:~/impacteffort"
-  ***REMOVED***,
-  "dependencies": ***REMOVED***
+  },
+  "dependencies": {
     "chart.js": "^2.9.3",
     "chartjs-node": "^1.7.1",
     "chartjs-plugin-datalabels": "^0.7.0",
@@ -16,5 +16,5 @@
     "lodash": "^4.17.15",
     "mailgun.js": "^2.0.1",
     "s3": "^4.4.0"
-  ***REMOVED***
-***REMOVED***
+  }
+}
