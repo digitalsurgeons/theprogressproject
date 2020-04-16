@@ -9,15 +9,15 @@ const template = require('./lib/template')
 const app = express()
 
 app.use(
-  express.json(***REMOVED***
-    verify: (req, res, buf) => ***REMOVED***
+  express.json({
+    verify: (req, res, buf) => {
       req.rawBody = buf
-    ***REMOVED***,
-  ***REMOVED***)
+    },
+  })
 )
 app.use(express.static('public'))
 
-app.post('/progress', (req, res) => ***REMOVED***
+app.post('/progress', (req, res) => {
   const expectedSig = req.header('Typeform-Signature')
 
   const hash = crypto
@@ -25,31 +25,31 @@ app.post('/progress', (req, res) => ***REMOVED***
     .update(req.rawBody)
     .digest('base64')
 
-  const actualSig = `sha256=$***REMOVED***hash***REMOVED***`
+  const actualSig = `sha256=${hash}`
 
-  if (actualSig !== expectedSig) ***REMOVED***
+  if (actualSig !== expectedSig) {
     res.status(403).send('invalid')
     return
-  ***REMOVED***
+  }
 
   const answers = req.body.form_response.answers
 
-  chart(answers, (params) => ***REMOVED***
-    mail(params, ***REMOVED***
+  chart(answers, (params) => {
+    mail(params, {
       bcc: process.env.EMAIL,
       template,
-    ***REMOVED***)
-  ***REMOVED***)
+    })
+  })
 
   res.send('ok')
-***REMOVED***)
+})
 
-app.get('/', (req, res) => ***REMOVED***
-  res.sendFile('index.html', ***REMOVED***
+app.get('/', (req, res) => {
+  res.sendFile('index.html', {
     root: './templates',
-  ***REMOVED***)
-***REMOVED***)
+  })
+})
 
-app.listen(3000, () => ***REMOVED***
+app.listen(3000, () => {
   console.log(`Example app listening on port 3000!`)
-***REMOVED***)
+})
