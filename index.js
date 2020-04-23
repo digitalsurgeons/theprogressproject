@@ -38,7 +38,7 @@ app.post('/progress', async (req, res) => {
   await db.store(answers)
   const chartAsset = await chart(answers)
   await mail(
-    { answers, chartAsset },
+    { answers, chart: chartAsset },
     {
       bcc: process.env.EMAIL,
       template,
