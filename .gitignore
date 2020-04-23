@@ -4,3 +4,4 @@ img
 .DS_Store
 public/email.html
 notes.md
+firebaseKey.json
