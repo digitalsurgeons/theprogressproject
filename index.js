@@ -1,10 +1,11 @@
 require('dotenv').config()
 
-const crypto = require('crypto')
 const express = require('express')
+const crypto = require('crypto')
 const chart = require('./lib/chart')
 const mail = require('./lib/mail')
 const template = require('./lib/template')
+const db = require('./lib/db')
 
 const app = express()
 
@@ -17,7 +18,7 @@ app.use(
 )
 app.use(express.static('public'))
 
-app.post('/progress', (req, res) => {
+app.post('/progress', async (req, res) => {
   const expectedSig = req.header('Typeform-Signature')
 
   const hash = crypto
@@ -34,12 +35,15 @@ app.post('/progress', (req, res) => {
 
   const answers = req.body.form_response.answers
 
-  chart(answers, (params) => {
-    mail(params, {
+  await db.store(answers)
+  const chartAsset = await chart(answers)
+  await mail(
+    { answers, chartAsset },
+    {
       bcc: process.env.EMAIL,
       template,
-    })
-  })
+    }
+  )
 
   res.send('ok')
 })
