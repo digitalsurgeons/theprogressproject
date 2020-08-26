@@ -1,8 +1,8 @@
 require('dotenv').config()
 
 const express = require('express')
-const crypto = require('crypto')
-const chart = require('./lib/chart')
+const hash = require('./lib/hash')
+const impactEffort = require('./lib/impactEffort')
 const mail = require('./lib/mail')
 const template = require('./lib/template')
 const db = require('./lib/db')
@@ -19,16 +19,7 @@ app.use(
 app.use(express.static('public'))
 
 app.post('/progress', async (req, res) => {
-  const expectedSig = req.header('Typeform-Signature')
-
-  const hash = crypto
-    .createHmac('sha256', process.env.TYPEFORM_SECRET)
-    .update(req.rawBody)
-    .digest('base64')
-
-  const actualSig = `sha256=${hash}`
-
-  if (actualSig !== expectedSig) {
+  if (!hash(req)) {
     res.status(403).send('invalid')
     return
   }
@@ -36,7 +27,7 @@ app.post('/progress', async (req, res) => {
   const answers = req.body.form_response.answers
 
   await db.store(answers)
-  const chartAsset = await chart(answers)
+  const chartAsset = await impactEffort(answers)
   await mail(
     { answers, chart: chartAsset },
     {
