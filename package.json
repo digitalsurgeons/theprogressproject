@@ -17,6 +17,9 @@
     "firebase-admin": "^8.10.0",
     "lodash": "^4.17.15",
     "mailgun.js": "^2.0.1",
+    "sharp": "^0.25.4",
+    "svg.js": "^2.7.1",
+    "svgdom": "^0.1.8",
     "uuid": "^7.0.3"
   }
 }
